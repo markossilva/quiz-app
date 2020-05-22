@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   final String text;
   final void Function() onPressed;
-  void Function() onLongPress;
+  final void Function() onLongPress;
 
   Answer({this.text, this.onPressed, this.onLongPress});
 
