@@ -65,7 +65,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
     );
 
     var result = Result(
-      text: 'Parabéns! $_totalRating pontos',
+      text: 'Parabéns! Total: $_totalRating pontos',
       onRestart: restartQuestionary,
     );
 
