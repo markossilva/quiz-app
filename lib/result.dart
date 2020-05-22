@@ -1,18 +1,33 @@
 import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
-  final String message;
+  final String _text;
+  final void Function() _restart;
 
-  Result(this.message);
+  Result({
+    @required String text,
+    @required Function onRestart,
+  })  : _text = text,
+        _restart = onRestart;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Parabéns!',
-        style: TextStyle(fontSize: 28),
-        textAlign: TextAlign.center,
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Center(
+          child: Text(
+            _text,
+            style: TextStyle(fontSize: 28),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        FlatButton(
+          onPressed: _restart,
+          child: Text('Reuniciar?'),
+          textColor: Colors.blue,
+        )
+      ],
     );
   }
 }
