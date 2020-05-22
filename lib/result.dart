@@ -12,22 +12,23 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var restultTextMessagem = Center(
+      child: Text(
+        _text,
+        style: TextStyle(fontSize: 28),
+        textAlign: TextAlign.center,
+      ),
+    );
+
+    var restartButton = FlatButton(
+      onPressed: _restart,
+      child: Text('Reuniciar?'),
+      textColor: Colors.blue,
+    );
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Center(
-          child: Text(
-            _text,
-            style: TextStyle(fontSize: 28),
-            textAlign: TextAlign.center,
-          ),
-        ),
-        FlatButton(
-          onPressed: _restart,
-          child: Text('Reuniciar?'),
-          textColor: Colors.blue,
-        )
-      ],
+      children: <Widget>[restultTextMessagem, restartButton],
     );
   }
 }
